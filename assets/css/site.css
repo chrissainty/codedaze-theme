@@ -1,0 +1,407 @@
+@font-face {
+    font-family: 'fontello';
+    src: url("../font/fontello.eot?40607460");
+    src: url("../font/fontello.eot?40607460#iefix") format("embedded-opentype"), url("../font/fontello.woff?40607460") format("woff"), url("../font/fontello.ttf?40607460") format("truetype"), url("../font/fontello.svg?40607460#fontello") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'fontello';
+      src: url('../font/fontello.svg?55664638#fontello') format('svg');
+    }
+  }
+  */
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  
+  .icon-twitter:before {
+    content: '\e800'; }
+  
+  .icon-rss:before {
+    content: '\e801'; }
+
+  .icon-menu:before {
+    content: '\e802'; }
+
+  .icon-facebook-squared:before {
+    content: '\e803'; }
+
+  .icon-gplus:before {
+    content: '\e804'; }
+
+  .icon-linkedin:before {
+    content: '\e805'; }
+
+  .icon-behance:before {
+    content: '\e806'; }
+
+  .icon-cancel:before {
+    content: '\e807'; }
+
+  .icon-dribbble:before {
+    content: '\e808'; }
+
+  .icon-instagram:before {
+    content: '\e809'; }
+
+  .icon-github:before {
+    content: '\e80a'; }
+  
+
+body {
+    background-color: #f7f9fa;
+    color: #3c3d47;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold; }
+  
+a {
+    text-decoration: none;
+    color: #ff6600;
+    transition: all 0.3s ease; 
+}
+
+a:hover {
+      color: #a2a2a2; 
+}
+  
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #3c3d47; 
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+      color: #000000; 
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+nav img {
+    padding: 9px;
+}
+
+.button {
+  border-color: #ff6600;
+}
+
+.button.button-outline {
+  color: #ff6600;
+}
+
+pre {
+  border-left-color: #ff6600;
+}
+
+header {
+  margin-bottom: 50px;
+  border-bottom: 4px solid #ff6600;
+}
+
+.hero {
+    position: relative;
+    background: url("../img/hero.jpg") center center no-repeat;
+    background-size: cover;
+    padding: 212px 0 212px;
+    text-align: center;
+    color: #f7f9fa;
+}
+
+header.post > .hero {
+  padding: 90px 0 50px;
+}
+
+.hero a.logo {
+    width: 170px;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hero .author {
+    text-align: center;
+}
+
+.hero .author > img {
+    padding: 1px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ff6600;
+    width: 118px;
+    height: 118px;
+}
+
+.hero h5 {
+    margin: 18px 0 0 0;
+    font-weight: normal;
+}
+
+.hero .social {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 18px 0 0 0;
+}
+
+.hero .social > li {
+    display: inline;
+}
+
+.hero .social > li > a {
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*
+.content {
+    width: 50%;
+    margin-right: 25%;
+    margin-top: 1%;
+    float: right; } */
+
+article {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid rgba(38,41,58,.1);
+  border-radius: 5px;
+  padding: 35px;
+  margin: 20px 0;
+}
+
+article h1 {
+  text-align: center;
+}
+
+article h2 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+
+article h2.posts-header {
+  margin-top: 0;
+  margin-bottom: 2.0rem;
+  font-size: 3rem;
+}
+
+article h2 > a {
+  color: #4A4A4A;
+}
+
+article h2 > a:hover {
+  color: #000000;
+}
+
+article h3 {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+article .post-info {
+  color: #bdbdbd;
+  border-top: 1px solid rgba(38,41,58,.1);
+  border-bottom: 1px solid rgba(38,41,58,.1);
+  padding: 20px 0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+article .share-buttons {
+  border-top: 1px solid rgba(38,41,58,.1);
+  border-bottom: 1px solid rgba(38,41,58,.1);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+article .share-buttons > ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+article .share-buttons > ul > li {
+  display: inline;
+}
+
+article .share-buttons > ul > li > a {
+  padding: 5px;
+  font-size: 20px;
+}
+
+article footer {
+  color: #bdbdbd;
+  border-top: 1px solid rgba(38,41,58,.1);
+  padding-top: 20px;
+}
+
+article footer img {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+#disqus_thread {
+  margin-top: 50px;
+}
+
+nav.pagination {
+  position: relative;
+  padding: 35px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+nav.pagination .page-number {
+  display: inline-block;
+  color: #bdbdbd;
+}
+
+nav.pagination .newer-posts {
+  position: absolute;
+  left: 0;
+}
+
+nav.pagination .older-posts {
+  position: absolute;
+  right: 0;
+}
+
+.read-next {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin-top: 10rem;
+}
+
+.read-next h2 {
+  margin-top: 1rem;
+}
+
+.read-next .prev-story,
+.read-next .next-story {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  min-width: 50%;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background: #383838 no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  border-top: 5px solid #383838;
+}
+
+.read-next section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 4rem auto;
+  padding-bottom: 4rem;
+  word-wrap: break-word;
+}
+
+.read-next .prev-story section:before,
+.read-next .next-story section:before {
+  content: "Previous Post";
+  padding: 6px 10px 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  color: rgba(255,255,255,0.8);
+  border: rgba(255,255,255,0.5) 1px solid;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+
+.prev-story:hover,
+.next-story:hover {
+  color: #3c3d47;
+  background: #fff;
+  transition: all 0.2s ease;
+  border-top: 5px solid #ff6600;
+}
+
+.prev-story:hover section:before,
+.next-story:hover section:before  {
+  color: #222;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+footer.main {
+  background-color: #383838;
+  border-top: 4px solid #ff6600;
+  color: #fff;
+  margin-top: 40px;
+  padding: 30px 0;
+  clear: both;
+  text-align: center;
+}
+
+footer.main.post {
+  margin-top: 0;
+}
+
+footer.main .left {
+  float: left;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+footer.main .right {
+  float: right;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}

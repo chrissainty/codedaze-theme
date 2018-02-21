@@ -117,6 +117,12 @@ nav img {
   color: #ff6600;
 }
 
+blockquote {
+  font-weight: bold;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
 pre {
   border-left-color: #ff6600;
 }

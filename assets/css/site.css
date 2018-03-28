@@ -121,10 +121,15 @@ blockquote {
   font-weight: bold;
   font-size: 1.8rem;
   font-style: italic;
+  border-left: 6px solid #ff6600;
 }
 
 pre {
   border-left-color: #ff6600;
+}
+
+em > strong {
+  font-weight: 600;
 }
 
 header {
@@ -189,13 +194,6 @@ header.post > .hero {
     padding: 5px;
     font-size: 20px;
 }
-
-/*
-.content {
-    width: 50%;
-    margin-right: 25%;
-    margin-top: 1%;
-    float: right; } */
 
 article {
   position: relative;

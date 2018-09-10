@@ -24,29 +24,101 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <header class="post">
-            <div class="hero">
-                <a href="{{@blog.url}}" class="logo">
-                    <img src="{{asset "img/logo.png"}}" alt="CodeDaze" />
-                </a>
-                <div class="author">
-                    <img src="{{asset "img/profile-image.jpg"}}" alt="Chris Sainty" />
+        <header>
+            <div class="primary-nav container">
+                <div class="logo">
+                    <a href="{{@blog.url}}" class="logo">
+                        <img src="{{asset "img/logo.svg"}}" alt="CodeDaze" />
+                    </a>
                 </div>
-                <h5>
-                    Talking about ASP.NET Core & Angular
-                </h5>
-                <ul class="social">
-                    <li><a class="icon-github" href="https://github.com/chrissainty" target="_blank" title="Fork me on Github"></a></li>
-                    <li><a class="icon-linkedin" href="https://www.linkedin.com/in/chris-sainty" target="_blank" title="LinkedIn"></a></li>
-                    <li><a class="icon-twitter" href="https://twitter.com/chris_sainty" target="_blank" title="Twitter"></a></li>
-                </ul>   
-                <div class="hero-overlay"></div>
+                {{navigation}}
+            </div>
+            <div class="secondary-nav">
+                <div class="container">
+                    {{#get "tags" limit="all" include="count.posts" order="name asc"}}
+                    <ul>
+                        {{#foreach tags}}
+                            <li><a href="/tag/{{slug}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                    {{/get}}
+                </div>  
             </div>
         </header>
 
         {{#post}}
 
-        <div class="container clearfix">
+        <div class="container">
+            <div id="main">
+            
+                <article class="{{post_class}}">
+                    {{#primary_tag}}
+                        <span class="primary-tag">{{name}}</span>
+                    {{/primary_tag}}
+                    <h1>
+                        {{title}}</a>
+                    </h1>
+                    <div class="post-info meta-info">
+                        <span class="published">
+                            <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="Do MMMM YYYY"}}</time>
+                        </span>
+                        <span class="share meta-info">
+                            <span>Share On</span>
+                            <ul>
+                                <li><a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a></li>
+                                <li><a class="icon-twitter"  href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this page"></a></li>
+                                <li><a class="icon-gplus"  href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"></a></li>
+                                <li><a class="icon-linkedin"  href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on LinkenIn"></a></li>
+                            </ul>
+                        </span>
+                        <span class="read-time meta-info">
+                            {{reading_time}}
+                        </span>
+                    </div>
+                    
+                    {{content}}
+                    
+                    <div class="share-buttons meta-info">
+                        <span>Share On</span>
+                        <ul>
+                            <li><a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a></li>
+                            <li><a class="icon-twitter"  href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this page"></a></li>
+                            <li><a class="icon-gplus"  href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"></a></li>
+                            <li><a class="icon-linkedin"  href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on LinkenIn"></a></li>
+                        </ul>
+                    </div>
+                
+                </article>
+
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = '{{url absolute="true"}}';
+                        this.page.identifier = 'ghost-{{comment_id}}';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://codedaze.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            {{> sidebar}}
+
+        </div> 
+
+
+
+        {{!-- <div class="container clearfix">
             <main role="main" class="content">           
 
                 <article class="{{post_class}}">
@@ -92,7 +164,7 @@
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                 
             </main>
-        </div>
+        </div> --}}
 
         <div class="read-next">
             {{#prev_post}}
@@ -119,9 +191,8 @@
         <footer class="main post">
             <div class="container clearfix">
             
-                <a class="icon-rss" href="{{@blog.url}}/rss/" title="RSS Feed"></a>
-                <p class="left">&copy; 2018 Chris Sainty</p>
-                <p class="right">Proudly published with Ghost</p>
+                <p>&copy; 2018 Chris Sainty</p>
+                <p>Proudly published with Ghost</p>
             
             </div>
         </footer>
@@ -138,7 +209,6 @@
 
           ga('create', 'UA-XXXXXXXXX-X', 'auto');
           ga('send', 'pageview');
-
         </script>
     </body>
 </html>

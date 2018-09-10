@@ -25,37 +25,34 @@
         <![endif]-->
 
         <header>
-            <div class="hero">
-                <a href="{{@blog.url}}" class="logo">
-                    <img src="{{asset "img/logo.png"}}" alt="CodeDaze" />
-                </a>
-                <div class="author">
-                    <img src="{{asset "img/profile-image.jpg"}}" alt="Chris Sainty" />
+            <div class="primary-nav container">
+                <div class="logo">
+                    <a href="{{@blog.url}}" class="logo">
+                        <img src="{{asset "img/logo.svg"}}" alt="CodeDaze" />
+                    </a>
                 </div>
-                <h5>
-                    Talking about ASP.NET Core & Angular
-                </h5>
-                <ul class="social">
-                    <li><a class="icon-github" href="https://github.com/chrissainty" target="_blank" title="Fork me on Github"></a></li>
-                    <li><a class="icon-linkedin" href="https://www.linkedin.com/in/chris-sainty" target="_blank" title="LinkedIn"></a></li>
-                    <li><a class="icon-twitter" href="https://twitter.com/chris_sainty" target="_blank" title="Twitter"></a></li>
-                </ul>   
-                <div class="hero-overlay"></div>
+                {{navigation}}
+            </div>
+            <div class="secondary-nav">
+                <div class="container">
+                    {{#get "tags" limit="all" include="count.posts" order="name asc"}}
+                    <ul>
+                        {{#foreach tags}}
+                            <li><a href="/tag/{{slug}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                    {{/get}}
+                </div>  
             </div>
         </header>
-
-        <div>
-            {{tags}}
-        </div>
 
         {{{body}}}  
 
         <footer class="main">
             <div class="container clearfix">
             
-                <a class="icon-rss" href="{{@blog.url}}/rss/" title="RSS Feed"></a>
-                <p class="left">&copy; 2018 Chris Sainty</p>
-                <p class="right">Proudly published with Ghost</p>
+                <p>&copy; 2018 Chris Sainty</p>
+                <p>Proudly published with Ghost</p>
             
             </div>
         </footer>

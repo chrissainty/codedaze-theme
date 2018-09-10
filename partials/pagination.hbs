@@ -1,9 +1,14 @@
 <nav class="pagination" role="navigation">
-    {{#if prev}}
-        <a class="newer-posts button button-outline" href="{{page_url prev}}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
-    {{/if}}
-    <span class="page-number">Page {{page}} of {{pages}}</span>
-    {{#if next}}
-        <a class="older-posts button button-outline" href="{{page_url next}}">Older Posts <span aria-hidden="true">&rarr;</span></a>
-    {{/if}}
+    <div class="pages">
+        <span class="page-number">Page {{page}} of {{pages}}</span>
+    </div>
+    <div class="nav-buttons">
+        {{#if prev}}
+            <a class="newer-posts button button-outline" href="{{page_url prev}}"><span aria-hidden="true">&larr;</span> Newer Posts</a>
+        {{/if}}
+    
+        {{#if next}}
+            <a class="older-posts button button-outline" href="{{page_url next}}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+        {{/if}}
+    </div>
 </nav>

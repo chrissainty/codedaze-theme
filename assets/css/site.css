@@ -400,6 +400,7 @@ article h1 {
   letter-spacing: 0.5px;
   font-size: 4rem;
   text-align: center;
+  margin-top: 0;
 }
 
 article h2 {
@@ -572,6 +573,7 @@ article footer img {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;

@@ -159,13 +159,32 @@ nav img {
 }
 
 blockquote {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-style: italic;
-  border-left: 6px solid #ff6600;
+  text-align: center;
+  border-left: .4rem solid #ff6600;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: serif;
+  padding-right: 0.5rem;
+}
+
+blockquote::after {
+  content: close-quote;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: serif;
+  padding-right: 0.5rem;
 }
 
 pre {
-  border-left-color: #ff6600;
+  border-left: none;
+  border-top: .4rem solid #ff6600;
+  border-bottom: .4rem solid #ff6600;
   margin-bottom: 2.5rem !important;
 }
 
@@ -388,8 +407,15 @@ article.blogpost {
   word-break: break-word;
 }
 
+article pre {
+  margin-left: -2rem !important;
+  margin-right: -2rem !important;
+}
+
 article pre > code {
-  width: 41rem;
+  width: 75.8rem;
+  margin: 0;
+  padding: 2rem !important;
 }
 
 article:first-child {
@@ -545,6 +571,12 @@ article footer img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
 }
 
 .pagination {
@@ -771,7 +803,6 @@ footer.main.post {
   header .secondary-nav ul > li > a {
     display: block;
     padding: 0.5rem 0 0.5rem 0;
-    margin: 1rem 0 1rem 0;
     color: #e3e3e3;
     letter-spacing: 1px;
     text-transform: uppercase;

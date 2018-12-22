@@ -1,4 +1,11 @@
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+    }
+</script>
+
 <script src="{{asset "js/vendor/highlight.pack.js"}}"></script>
+<script src="{{asset "js/vendor/manup.min.js"}}"></script>
 
 <script>
     function toggleMenu() {

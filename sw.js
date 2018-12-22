@@ -26,6 +26,10 @@ function isHtmlPage(event) {
  */
 self.addEventListener('fetch', event => {
 
+    if (event.request.url.indexOf('/ghost/') !== -1) {
+        return false;
+    }
+
     event.respondWith(
         caches.match(event.request)
             .then(response => {

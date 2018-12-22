@@ -359,6 +359,7 @@ header > .secondary-nav {
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 3rem;
+  font-weight: 500px;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.5px;
@@ -405,6 +406,10 @@ article.blogpost {
   border: none;
   padding: 0;
   word-break: break-word;
+}
+
+article.blogpost h2 {
+  font-weight: 600;
 }
 
 article pre {
